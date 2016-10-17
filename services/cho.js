@@ -10,7 +10,7 @@ function choListener() {
     var nick = auth.irc.username;
     var login = nick;
 
-    var channel = '#osu';
+    var channel = '#modreqs';
     var privmsg = 'PRIVMSG ' + channel + ' :';
 
     var osuPattern = /\b((https?:\/\/)(osu\.ppy\.sh)(\/[bs]{1}\/)([\d\.-]*))/g;
