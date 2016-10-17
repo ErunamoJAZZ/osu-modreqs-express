@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<header>
+    <title>osu! #modreqs web, by ErunamoJAZZ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+    <style>
+        body {
+            background-image: url("https://new.ppy.sh/images/backgrounds/page-ddd.png");
+        }
+
+        section {
+            margin: 10px;
+        }
+
+        .card {
+            margin: 1rem;
+            padding: 1ex;
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+        }
+
+        .box {
+            display: flex;
+        }
+
+        .order {
+            position: relative;
+            float: right;
+        }
+
+        .thumb {
+            width: 166px;
+            height: 120px;
+        }
+
+        .spam {
+            font-style: italic;
+            position: absolute;
+            right: 1em;
+            top: 5em;
+        }
+    </style>
+</header>
+<body>
+
+
+<!-- Menú -->
+<div class="pure-menu pure-menu-horizontal">
+    <span href="/" class="pure-menu-heading pure-menu-link">osu! #modreqs web</span>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item
+                    {{#if beatmapsPage }} pure-menu-selected {{/if}}">
+            <a href="/" class="pure-menu-link">Beatmaps</a>
+        </li>
+        <li class="pure-menu-item
+                    {{#if aboutPage }} pure-menu-selected {{/if}}">
+            <a href="/about" class="pure-menu-link">About</a>
+        </li>
+    </ul>
+</div>
+
+<!--Content-->
+{{{body}}}
+</body>
+</html>
