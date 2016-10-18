@@ -74,7 +74,8 @@ function modRequetPlz(nick, bm_type, bm_id) {
                 request
                     .get(query_base)
                     .query({s: res.body[0].beatmapset_id})
-                    .end(function (new_res) {
+                    .end(function (err, new_res) {
+                        console.log(new_res.body);
                         insertMapAndMod(new_res.body, nick);
                     });
             }
