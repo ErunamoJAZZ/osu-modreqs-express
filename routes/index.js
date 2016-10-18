@@ -26,7 +26,7 @@ router.get('/', function (req, res, next) {
                     time: item.time,
                     nick: item.nick,
                     diffs: diffs,
-                    beatmap_id: '487377'
+                    beatmap_id: item.beatmap_id
                 }
             });
             res.render('index', {
