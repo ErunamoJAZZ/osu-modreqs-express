@@ -40,5 +40,11 @@ router.get('/about', function (req, res, next) {
     res.render('about', {aboutPage: true});
 });
 
+app.get('/robots.txt', function (req, res) {
+    res.type('text/plain');
+    res.send("User-agent: *\nDisallow:");
+});
+
+app.use(express.favicon(__dirname + '/public/images/favicon.ico'));
 
 module.exports = router;
