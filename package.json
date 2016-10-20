@@ -13,7 +13,7 @@
     "hbs": "~4.0.0",
     "morgan": "~1.7.0",
     "pg-promise": "^5.3.4",
-    "serve-favicon": "~2.3.0",
+    "serve-favicon": "^2.3.0",
     "superagent": "^2.3.0"
   }
 }
