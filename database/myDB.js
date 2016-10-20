@@ -22,7 +22,7 @@ function insertBeatmap(beatmap, next) {
         });
 }
 
-function insertModRequest(modrequest) {
+function insertModRequest(modrequest, next) {
 
     var insertStament =
         'INSERT INTO mod_request ' +
@@ -30,9 +30,7 @@ function insertModRequest(modrequest) {
         'VALUES ($[time], $[nick], $[set], $[beatmap_id])';
 
     return db.any(insertStament, modrequest)
-        .then(function () {
-            console.log('inserted modrequest.')
-        })
+        .then(next)
         .catch(function (error) {
             console.log(new Date(), 'Error insertModRequest( ' + modrequest + ' ).', error)
         });
@@ -61,5 +59,6 @@ function selectLastRequests() {
 module.exports = {
     insertBeatmap: insertBeatmap,
     insertModRequest: insertModRequest,
-    selectLastRequests: selectLastRequests
+    selectLastRequests: selectLastRequests,
+    cacheName: 'beatmap_list'
 }

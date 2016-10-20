@@ -1,6 +1,7 @@
+var auth = require('../auth');
+var cache = require('memory-cache');
 var request = require('superagent');
 var myDB = require('../database/myDB');
-var auth = require('../auth');
 
 /**
  *  Must insert in a Database!
@@ -46,7 +47,10 @@ function insertMapAndMod(mapSet, nick) {
     //console.log(beatmap, modRequest)
     myDB.insertBeatmap(beatmap, function () {
         console.log('Insertado insertBeatmap.')
-        myDB.insertModRequest(modRequest)
+        myDB.insertModRequest(modRequest, function () {
+            console.log('inserted modrequest.')
+            cache.del(myDB.cacheName)
+        })
     });
 
 }
