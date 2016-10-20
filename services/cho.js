@@ -39,14 +39,16 @@ function choListener() {
             /**
              * Most common case. Ignore all Join, Part, and Quit messages.
              */
-            if (line.includes('JOIN :') || line.includes('PART :') || line.includes('QUIT :') || line == '') {
+            if (line.includes('JOIN :') || line.includes('PART :') ||
+                line.includes('QUIT :') || line.startsWith(':BanchoBot!cho@cho.ppy.sh MODE ') ||
+                line == '') {
             }
 
             /**
              * Ping case. Necessary to avoid disconnections.
              */
             else if (line.startsWith('PING ')) {
-                console.log('<ping>: ' + line);
+                //console.log('<ping>: ' + line);
                 // We must respond to PINGs to avoid being disconnected.
                 socket.write('PONG ' + line.substring(5) + '\r\n');
             }
@@ -76,7 +78,7 @@ function choListener() {
             /**
              * Case for join in #modreqs, after server connection was all ready.
              */
-            else if (line.indexOf('376') >= 0) {
+            else if (line.startsWith(':cho.ppy.sh 376')) {
                 socket.write('JOIN ' + channel + '\r\n');
                 socket.write('AWAY :Hi, if I don\'t answer in a while and it is important, ' +
                     'try send me a message in forum please. (PD: use #modreqs !!!)\r\n');
@@ -87,7 +89,7 @@ function choListener() {
              */
             else {
                 // Print the raw line received by the bot.
-                console.log('<> => ' + line);
+                console.log(new Date(), '<> => ' + line);
             }
         });
 
@@ -96,7 +98,7 @@ function choListener() {
 
 
     socket.on('error', function (data) {
-        console.log('error: ' + data);
+        console.log(new Date(), 'error: ' + data);
     });
 }
 

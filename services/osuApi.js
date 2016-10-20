@@ -62,12 +62,13 @@ function modRequetPlz(nick, bm_type, bm_id) {
     var osuApiKey = auth.osu.key;
 
     var query_base = 'https://osu.ppy.sh/api/get_beatmaps?k=' + osuApiKey;
+    var query_mapp = '' + bm_type + '=' + bm_id;
 
     request
-        .get(query_base + '&' + bm_type + '=' + bm_id)
+        .get(query_base + '&' + query_mapp)
         .end(function (err, res) {
             if (res.body.length < 1) {
-                console.log('Map does not exist?', res.body)
+                console.log('Map does not exist?', query_mapp)
             } else if (bm_type === 's') {
                 insertMapAndMod(res.body, nick);
             } else {
@@ -75,7 +76,7 @@ function modRequetPlz(nick, bm_type, bm_id) {
                     .get(query_base)
                     .query({s: res.body[0].beatmapset_id})
                     .end(function (err, new_res) {
-                        console.log(new_res.body);
+                        //console.log(new_res.body);
                         insertMapAndMod(new_res.body, nick);
                     });
             }

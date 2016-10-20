@@ -18,7 +18,7 @@ function insertBeatmap(beatmap, next) {
     return db.any(insertStament, beatmap)
         .then(next)
         .catch(function (error) {
-            console.log('Error insertBeatmap( ' + beatmap + ' ).', error)
+            console.log(new Date(), 'Error insertBeatmap( ' + beatmap + ' ).', error)
         });
 }
 
@@ -34,7 +34,7 @@ function insertModRequest(modrequest) {
             console.log('inserted modrequest.')
         })
         .catch(function (error) {
-            console.log('Error insertModRequest( ' + modrequest + ' ).', error)
+            console.log(new Date(), 'Error insertModRequest( ' + modrequest + ' ).', error)
         });
 }
 
@@ -54,7 +54,7 @@ function selectLastRequests() {
 
     return db.any(selectStament, [daysAgo.toISOString()])
         .catch(function (error) {
-            console.log('Error selectLastRequests().', error)
+            console.log(new Date(), 'Error selectLastRequests().', error)
         });
 }
 
