@@ -1,8 +1,64 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("https://new.ppy.sh/images/backgrounds/page-ddd.png");
+}
+
+section {
+  margin: 10px;
+}
+
+h1 {
+  margin-left: 1rem;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.card {
+  margin: 1em;
+  padding: 0.5em;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+}
+
+.card h3 {
+  margin: 0 2rem 0.5rem 0
+}
+
+.box {
+  display: flex;
+}
+
+.box p {
+  margin: 0 0 0 0.5em;
+}
+
+.box p + p {
+  margin-top: 1em;
+}
+
+.diff-icons {
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0.5em;
+}
+
+.order {
+  position: relative;
+  float: right;
+}
+
+.thumb {
+  width: 166px;
+  height: 120px;
+}
+
+.spam {
+  font-style: italic;
+  position: absolute;
+  right: 1em;
+  top: 5em;
 }

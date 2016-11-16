@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='shortcut icon' type='image/png' href='/favicon.png'/>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
@@ -13,50 +14,13 @@
     <!--[if gt IE 8]><!-->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
     <!--<![endif]-->
-
-    <style>
-        body {
-            background-image: url("https://new.ppy.sh/images/backgrounds/page-ddd.png");
-        }
-
-        section {
-            margin: 10px;
-        }
-
-        .card {
-            margin: 1rem;
-            padding: 1ex;
-            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
-        }
-
-        .box {
-            display: flex;
-        }
-
-        .order {
-            position: relative;
-            float: right;
-        }
-
-        .thumb {
-            width: 166px;
-            height: 120px;
-        }
-
-        .spam {
-            font-style: italic;
-            position: absolute;
-            right: 1em;
-            top: 5em;
-        }
-    </style>
 </header>
 <body>
 
 
 <!-- Menú -->
 <div class="pure-menu pure-menu-horizontal">
-    <span href="/" class="pure-menu-heading pure-menu-link">osu! #modreqs web</span>
+    <span href="/" class="pure-menu-heading">osu! #modreqs web</span>
     <ul class="pure-menu-list">
         <li class="pure-menu-item
                     {{#if beatmapsPage }} pure-menu-selected {{/if}}">

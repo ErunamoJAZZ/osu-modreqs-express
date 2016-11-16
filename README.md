@@ -1,22 +1,17 @@
-# #modreqs web, for Osu! game
+# #modreqs web, for osu! game
 
-In the past, Osu! had a section in his web to get the last posted maps in #modreqs channel.
-For some reason this stops work in 2014: https://osu.ppy.sh/forum/t/211410
+In the past, osu! had a section of its website that displayed the latest maps posted in the #modreqs channel.
+For some reason, this stopped working in 2014: https://osu.ppy.sh/forum/t/211410
 
-This simple app try to emulate a bit this utility.
+This simple app tries to emulate a bit this utility.
 
-I hope people (specially _Nominators_), can find it util!!
+I hope people (especially _Nominators_), can find it useful!!
 
 
 
 # Technology
-I wrote it in scala, but because low memory server, I rewrite it for Nodejs.
+I originally wrote it in Scala, but because I have a low memory server, I rewrote it for Node.js. Scala is really nice for high performance servers, but it needs a lot of memory, too. Now, it uses JavaScript (nOt FAnCy Babel), postgres and express.js. The IRC connection is just a Socket.
 
-Scala is really nice for high performance servers, but need a lot of memory too.
+Check out the original project here: https://github.com/ErunamoJAZZ/osu-modreqs-play
 
-https://github.com/ErunamoJAZZ/osu-modreqs-play
-
-Now, its use JavaScript (nOt FAnCy Babel), postgres, and express.js. Irc connection is just a Socket.
-
-
-I accept pull requests, but poke me before start to code please :3
+I accept pull requests, but poke me before you start to code please :3
