@@ -81,7 +81,7 @@ function choListener() {
             else if (line.startsWith(':cho.ppy.sh 376')) {
                 socket.write('JOIN ' + channel + '\r\n');
                 socket.write('AWAY :Hi, if I don\'t answer in a while and it is important, ' +
-                    'try send me a message in forum please. (PD: use #modreqs !!!)\r\n');
+                    'try send me a message in forum please or ask in #help. (PD: use http://modreqs-web.tk/ !!!)\r\n');
             }
 
             /**
