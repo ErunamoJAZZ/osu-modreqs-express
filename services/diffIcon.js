@@ -4,11 +4,11 @@ function diffIcon(item) {
 
 
     var urlStar =
-        x <= 1.50 ? 'https://osu.ppy.sh/images/easy.png' :
-            x <= 2.25 ? 'https://osu.ppy.sh/images/normal.png' :
-                x <= 3.75 ? 'https://osu.ppy.sh/images/hard.png' :
-                    x <= 5.25 ? 'https://osu.ppy.sh/images/insane.png' :
-                        'https://osu.ppy.sh/images/expert.png';
+        x <= 1.50 ? 'https://s.ppy.sh/images/easy.png' :
+            x <= 2.25 ? 'https://s.ppy.sh/images/normal.png' :
+                x <= 3.75 ? 'https://s.ppy.sh/images/hard.png' :
+                    x <= 5.25 ? 'https://s.ppy.sh/images/insane.png' :
+                        'https://s.ppy.sh/images/expert.png';
     var urlImage =
         item.mode === 0 ? urlStar :
             item.mode === 1 ? urlStar.replace('.png', '-t.png') :
