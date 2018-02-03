@@ -5,8 +5,10 @@ const diffIcon = require('../services/diffIcon');
 
 const router = express.Router();
 
-/* GET home page. */
-router.get('/e', (req, res/* , next */) => {
+/**
+ * API to get the list of maps.
+ */
+router.get('/api/v1/beatmaps', (req, res/* , next */) => {
   const cachedList = cache.get(myDB.cacheName);
 
   if (cachedList === null) {
@@ -31,29 +33,17 @@ router.get('/e', (req, res/* , next */) => {
           };
         });
         cache.put(myDB.cacheName, newData);
-        res.render('index', {
-          beatmapsPage: true,
-          beatmaps: newData,
-        });
+        res.json({ beatmaps: newData });
       });
   } else {
-    res.render('index', {
-      beatmapsPage: true,
-      beatmaps: cachedList,
-    });
+    res.json({ beatmaps: cachedList });
   }
 });
 
-router.get('/about', (req, res/* , next */) => {
-  res.render('about', { aboutPage: true });
-});
 
-router.get('/robots.txt', (req, res) => {
-  res.type('text/plain');
-  res.send('User-agent: *\nDisallow:');
-});
-
-
+/**
+ * Load the Ember page directly.
+ */
 router.get('*', (req, res) => {
   res.sendfile('./public/index.html'); // load our public/index.html file of Ember.
 });
