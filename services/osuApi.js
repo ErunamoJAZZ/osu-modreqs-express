@@ -64,7 +64,7 @@ function insertMapAndMod(mapSet, nick) {
  * @param bmId map identification.
  */
 function modRequetPlz(nick, bmType, bmId) {
-  const osuApiKey = auth.osu.key;
+  const osuApiKey = process.env.OSU_KEY ? process.env.OSU_KEY : auth.osu.key;
 
   const queryBase = `https://osu.ppy.sh/api/get_beatmaps?k=${osuApiKey}`;
   const queryMapp = `${bmType}=${bmId}`;

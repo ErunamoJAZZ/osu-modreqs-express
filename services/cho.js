@@ -9,8 +9,8 @@ const scheduler = new funfixExec.GlobalScheduler(false);
 
 // osu! IRC connection constants
 const server = 'cho.ppy.sh';
-const pass = auth.irc.serverPassword;
-const nick = auth.irc.username;
+const pass = process.env.IRC_PASS ? process.env.IRC_PASS : auth.irc.serverPassword;
+const nick = process.env.IRC_NICK ? process.env.IRC_NICK : auth.irc.username;
 const login = nick;
 
 const channel = '#modreqs';

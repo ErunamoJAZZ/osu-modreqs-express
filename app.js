@@ -14,6 +14,15 @@ const users = require('./routes/users');
 const app = express();
 
 
+const irc = require('./services/cho');
+const dbCleaner = require('./services/cleaner');
+
+// Start IRC connection to bancho.
+irc.choService();
+
+// Start scheduler to renmove old maps from DB.
+dbCleaner.cleanerService();
+
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 app.use(logger('dev'));
