@@ -108,15 +108,15 @@ const choListener = () => {
 const choTaskFlagPing =
   scheduler.scheduleAtFixedRate(
     funfixExec.Duration.seconds(30),
-    funfixExec.Duration.seconds(3),
+    funfixExec.Duration.seconds(30),
     () => { globalChoFlagPing += 1; },
   );
 
 
 const choSupervisor =
   scheduler.scheduleAtFixedRate(
-    funfixExec.Duration.minutes(0),
-    funfixExec.Duration.minutes(1),
+    funfixExec.Duration.minutes(5),
+    funfixExec.Duration.minutes(5),
     () => {
       if (globalChoFlagPing > 3) {
         // matar conexión y reiniciar
@@ -132,14 +132,12 @@ const choSupervisor =
           error => console.error('[CHO][Supervisor]', error, new Date()),
           () => console.log('[CHO][Supervisor]', 'Restarted cho service.', new Date()),
         );
-      } else {
-        console.log('no entró');
       }
     },
   );
 
 const choInit = () => {
-  console.log('Init ChoListener Service!!!');
+  console.log('[CHO][Init]', 'Starting ChoListener Service!!!');
   choListener();
 };
 
