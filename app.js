@@ -8,18 +8,10 @@ const bodyParser = require('body-parser');
 
 const routes = require('./routes/index');
 const users = require('./routes/users');
-const irc = require('./services/cho');
-const dbCleaner = require('./services/cleaner');
 
 
 // Initialize express app.
 const app = express();
-
-// Start IRC connection to bancho.
-irc.choService();
-
-// Start scheduler to renmove old maps from DB.
-dbCleaner.cleanerService();
 
 
 // uncomment after placing your favicon in /public
