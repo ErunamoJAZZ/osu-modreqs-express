@@ -8,15 +8,18 @@ const bodyParser = require('body-parser');
 const routes = require('./routes/index');
 const users = require('./routes/users');
 const irc = require('./services/cho');
+const dbCleaner = require('./services/cleaner');
 
+
+// Initialize express app.
 const app = express();
 
-irc();
+// Start IRC connection to bancho.
+irc.choService();
 
+// Start scheduler to renmove old maps from DB.
+dbCleaner.cleanerService();
 
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));

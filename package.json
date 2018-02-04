@@ -15,7 +15,6 @@
     "express": "~4.16.2",
     "funfix-core": "^6.2.2",
     "funfix-exec": "^6.2.2",
-    "hbs": "~4.0.1",
     "memory-cache": "^0.2.0",
     "morgan": "~1.9.0",
     "pg-promise": "^7.4.1",

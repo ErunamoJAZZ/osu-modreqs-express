@@ -7,6 +7,7 @@ const auth = require('../auth');
 
 const scheduler = new funfixExec.GlobalScheduler(false);
 
+// osu! IRC connection constants
 const server = 'cho.ppy.sh';
 const pass = auth.irc.serverPassword;
 const nick = auth.irc.username;
@@ -15,8 +16,10 @@ const login = nick;
 const channel = '#modreqs';
 const privmsg = `PRIVMSG ${channel} :`;
 
+// Regex for `/np` ingame
 const osuPattern = /\b((https?:\/\/)(osu\.ppy\.sh)(\/[bs]{1}\/)([\d.-]*))/g;
 
+// flag to know if ping is working (if not, to restart socket)
 let globalChoFlagPing = 0;
 let socket = null;
 
@@ -24,6 +27,9 @@ let socket = null;
 /* eslint brace-style: 0 */
 /* eslint no-console: 0 */
 
+/**
+ * choListener perfrom a new connetion to Bancho with a socket.
+ */
 const choListener = () => {
   // Connect directly to the IRC server.
   socket = new net.Socket();
@@ -105,7 +111,11 @@ const choListener = () => {
 };
 
 
-const choTaskFlagPing =
+/**
+ * choTaskFlagPing perform a +1 in globalChoFlagPing,
+ * to test if server ping works.
+ */
+const choTaskFlagPing = // eslint-disable-line
   scheduler.scheduleAtFixedRate(
     funfixExec.Duration.seconds(30),
     funfixExec.Duration.seconds(30),
@@ -113,13 +123,16 @@ const choTaskFlagPing =
   );
 
 
-const choSupervisor =
+/**
+ * choSupervisor ckeck if ping works, if not then kill and restart socket.
+ */
+const choSupervisor = // eslint-disable-line
   scheduler.scheduleAtFixedRate(
     funfixExec.Duration.minutes(5),
     funfixExec.Duration.minutes(5),
     () => {
       if (globalChoFlagPing > 3) {
-        // matar conexión y reiniciar
+        // kill connection and restart.
         const tryDestroy = funfixCore.Try
           .of(() => socket)
           .map(s => s.end())
@@ -136,9 +149,16 @@ const choSupervisor =
     },
   );
 
-const choInit = () => {
+
+/**
+ * choInit, the public function to start this service.
+ */
+const choService = () => {
   console.log('[CHO][Init]', 'Starting ChoListener Service!!!');
   choListener();
 };
 
-module.exports = choInit;
+
+module.exports = {
+  choService,
+};

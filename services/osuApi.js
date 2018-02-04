@@ -3,6 +3,9 @@ const cache = require('memory-cache');
 const request = require('superagent');
 const myDB = require('../database/myDB');
 
+/* eslint no-console: 0 */
+
+
 /**
  *  Must insert in a Database!
  *
