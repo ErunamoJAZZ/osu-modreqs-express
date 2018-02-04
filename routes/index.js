@@ -6,6 +6,15 @@ const diffIcon = require('../services/diffIcon');
 const router = express.Router();
 
 /**
+ * Simple ping function.
+ * @type {[type]}
+ */
+router.get('/api/ping', (req, res) => {
+  res.send('pong!');
+});
+
+
+/**
  * API to get the list of maps.
  */
 router.get('/api/v1/beatmaps', (req, res/* , next */) => {

@@ -16,12 +16,16 @@ const app = express();
 
 const irc = require('./services/cho');
 const dbCleaner = require('./services/cleaner');
+const autoPing = require('./services/herokuAutoPing');
 
 // Start IRC connection to bancho.
 irc.choService();
 
 // Start scheduler to renmove old maps from DB.
 dbCleaner.cleanerService();
+
+// Start auto ping service, blame heroku sleep.
+autoPing.pingService();
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
