@@ -1,6 +1,12 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-
-
-<h1>Welcome to modreqs-web.tk</h1>
+<!-- Menú -->
+<nav class="pure-menu pure-menu-horizontal">
+    <span href="/" class="pure-menu-heading">osu! #modreqs web</span>
+    {{#link-to "home" class="pure-menu-item pure-menu-link" activeClass="pure-menu-selected"}}
+      Beatmaps
+    {{/link-to}}
+    {{#link-to "about" class="pure-menu-item pure-menu-link" activeClass="pure-menu-selected"}}
+      About
+    {{/link-to}}
+</nav>
 
 {{outlet}}
