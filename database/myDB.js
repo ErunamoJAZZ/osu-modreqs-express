@@ -4,9 +4,10 @@ const auth = require('../auth');
 
 /* eslint no-console: 0 */
 
-// 5432
-// Database connection.
-const db = pgp(auth.db);
+// Database connection. If it is in heroku, or in local.
+const db = process.env.DATABASE_URL ?
+  pgp(process.env.DATABASE_URL) :
+  pgp(auth.db);
 
 
 /**
