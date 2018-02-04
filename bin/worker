@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+const irc = require('../services/cho');
+const dbCleaner = require('../services/cleaner');
+
+// Start IRC connection to bancho.
+irc.choService();
+
+// Start scheduler to renmove old maps from DB.
+dbCleaner.cleanerService();
