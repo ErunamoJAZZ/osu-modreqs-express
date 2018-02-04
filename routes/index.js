@@ -45,7 +45,7 @@ router.get('/api/v1/beatmaps', (req, res/* , next */) => {
  * Load the Ember page directly.
  */
 router.get('*', (req, res) => {
-  res.sendfile('./public/index.html'); // load our public/index.html file of Ember.
+  res.sendFile('./public/index.html'); // load our public/index.html file of Ember.
 });
 
 module.exports = router;
