@@ -3,9 +3,17 @@ const auth = require('../auth');
 
 
 // 5432
+// Database connection.
 const db = pgp(auth.db);
 
 
+/**
+ * Insert or updat if exist before, a beatmap.
+ *
+ * @param  {[type]}   beatmap item to insert
+ * @param  {Function} next    function to excecute after perform the insert.
+ * @return {[type]}           a promise.
+ */
 function insertBeatmap(beatmap, next) {
   const insertStament =
       'INSERT INTO beatmap ' +
@@ -18,12 +26,18 @@ function insertBeatmap(beatmap, next) {
   return db.any(insertStament, beatmap)
     .then(next)
     .catch((error) => {
-      console.log(new Date(), `Error insertBeatmap( ${beatmap} ).`, error);
+      console.error(new Date(), `Error insertBeatmap( ${beatmap} ).`, error);
     });
 }
 
+/**
+ * Insert a new request for modding.
+ *
+ * @param  {[type]}   modrequest modreqs object.
+ * @param  {Function} next       function to excecute after perform the insert.
+ * @return {[type]}              a promise.
+ */
 function insertModRequest(modrequest, next) {
-
   const insertStament =
     'INSERT INTO mod_request ' +
     '("time", nick, set, beatmap_id) ' +
@@ -32,11 +46,15 @@ function insertModRequest(modrequest, next) {
   return db.any(insertStament, modrequest)
     .then(next)
     .catch((error) => {
-      console.log(new Date(), `Error insertModRequest( ${modrequest} ).`, error);
+      console.error(new Date(), `Error insertModRequest( ${modrequest} ).`, error);
     });
 }
 
-
+/**
+ * Select the last two days posted maps.
+ *
+ * @return {[type]} a promise with result.
+ */
 function selectLastRequests() {
   const daysAgo = new Date();
   daysAgo.setDate(daysAgo.getDate() - 2);
@@ -51,7 +69,7 @@ function selectLastRequests() {
 
   return db.any(selectStament, [daysAgo.toISOString()])
     .catch((error) => {
-      console.log(new Date(), 'Error selectLastRequests().', error);
+      console.error(new Date(), 'Error selectLastRequests().', error);
     });
 }
 

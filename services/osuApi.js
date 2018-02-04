@@ -57,8 +57,8 @@ function insertMapAndMod(mapSet, nick) {
  * MOD MY MAPPU PLZ, THX
  *
  * @param nick
- * @param bmType beatmap type. will be 's' or 'b'
- * @param bmId map identification
+ * @param bmType beatmap type. Must be 's' or 'b'.
+ * @param bmId map identification.
  */
 function modRequetPlz(nick, bmType, bmId) {
   const osuApiKey = auth.osu.key;

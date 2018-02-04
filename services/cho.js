@@ -1,39 +1,47 @@
 const net = require('net');
+const funfixExec = require('funfix-exec');
+const funfixCore = require('funfix-core');
+
 const modRequetPlz = require('./osuApi');
 const auth = require('../auth');
 
-function choListener() {
-  console.log('Init ChoListener Service!!!');
+const scheduler = new funfixExec.GlobalScheduler(false);
 
-  const server = 'cho.ppy.sh';
-  const pass = auth.irc.serverPassword;
-  const nick = auth.irc.username;
-  const login = nick;
+const server = 'cho.ppy.sh';
+const pass = auth.irc.serverPassword;
+const nick = auth.irc.username;
+const login = nick;
 
-  const channel = '#modreqs';
-  const privmsg = `PRIVMSG ${channel} :`;
+const channel = '#modreqs';
+const privmsg = `PRIVMSG ${channel} :`;
 
-  const osuPattern = /\b((https?:\/\/)(osu\.ppy\.sh)(\/[bs]{1}\/)([\d.-]*))/g;
+const osuPattern = /\b((https?:\/\/)(osu\.ppy\.sh)(\/[bs]{1}\/)([\d.-]*))/g;
 
+let globalChoFlagPing = 0;
+let socket = null;
+
+
+/* eslint brace-style: 0 */
+/* eslint no-console: 0 */
+
+const choListener = () => {
   // Connect directly to the IRC server.
-  const socket = new net.Socket();
+  socket = new net.Socket();
 
   socket.setEncoding('utf8');
 
   socket.connect(6667, server, () => {
-    console.log('CONNECTED TO: Bancho');
+    console.log('[CHO][Listener]', 'CONNECTED TO: Bancho');
     socket.write(`PASS ${pass}\r\n`);
     socket.write(`NICK ${nick}\r\n`);
     socket.write(`USER ${login} 8 * : Modreqs Express.js Testing\r\n`);
   });
 
   socket.on('data', (data) => {
+    // Get lines
     const lines = data.split('\n');
 
-    /* eslint brace-style: 0 */
     lines.forEach((line) => {
-      // console.log(JSON.stringify(line));
-      // console.log(typeof(line));
       /**
        * Most common case. Ignore all Join, Part, and Quit messages.
        */
@@ -47,7 +55,8 @@ function choListener() {
        * Ping case. Necessary to avoid disconnections.
        */
       else if (line.startsWith('PING ')) {
-        // console.log('<ping>: ' + line);
+        globalChoFlagPing = 1;
+        // console.log(new Date(), `<ping>: ${line}`);
         // We must respond to PINGs to avoid being disconnected.
         socket.write(`PONG ${line.substring(5)}\r\n`);
       }
@@ -66,7 +75,7 @@ function choListener() {
             const splited = url.split('/');
             const idType = splited[3];
             const id = splited[4];
-            console.log(`>>>>>>>>>>${text} - (${userNick}, ${idType}, ${id})'`);
+            console.log(`[MOD PLZ]>> ${text} - (${userNick}, ${idType}, ${id})'`);
             // HEREEEEE!!! :3
             modRequetPlz(userNick, idType, id);
           });
@@ -82,20 +91,56 @@ function choListener() {
         //     'try send me a message in forum please or ask in #help. (PD: use http://modreqs-web.tk/ !!!)\r\n');
       }
 
-      /**
-       * Nothing... just to debug.
-       */
+      // Nothing... just to debug.
       else {
         // Print the raw line received by the bot.
-        console.log(new Date(), `<> => ${line}`);
+        // console.log(new Date(), `<> => ${line}`);
       }
     });
   });
 
-
-  socket.on('error', (data) => {
-    console.log(new Date(), `error: ${data}`);
+  socket.on('error', (err) => {
+    console.error('[CHO][Listener]', err, new Date());
   });
-}
+};
 
-module.exports = choListener;
+
+const choTaskFlagPing =
+  scheduler.scheduleAtFixedRate(
+    funfixExec.Duration.seconds(30),
+    funfixExec.Duration.seconds(3),
+    () => { globalChoFlagPing += 1; },
+  );
+
+
+const choSupervisor =
+  scheduler.scheduleAtFixedRate(
+    funfixExec.Duration.minutes(0),
+    funfixExec.Duration.minutes(1),
+    () => {
+      if (globalChoFlagPing > 3) {
+        // matar conexión y reiniciar
+        const tryDestroy = funfixCore.Try
+          .of(() => socket)
+          .map(s => s.end())
+          .map(s => s.destroy());
+        tryDestroy.forEach(() => {
+          socket = null;
+          choListener();
+        });
+        tryDestroy.fold(
+          error => console.error('[CHO][Supervisor]', error, new Date()),
+          () => console.log('[CHO][Supervisor]', 'Restarted cho service.', new Date()),
+        );
+      } else {
+        console.log('no entró');
+      }
+    },
+  );
+
+const choInit = () => {
+  console.log('Init ChoListener Service!!!');
+  choListener();
+};
+
+module.exports = choInit;
