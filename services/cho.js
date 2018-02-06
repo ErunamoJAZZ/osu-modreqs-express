@@ -108,6 +108,10 @@ const choListener = () => {
   socket.on('error', (err) => {
     console.error('[CHO][Listener]', err, new Date());
   });
+
+  socket.on('close', (err) => {
+    console.log('[CHO][Listener] CLOSED CONNECTION.', err, new Date());
+  });
 };
 
 
