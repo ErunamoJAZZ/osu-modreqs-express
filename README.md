@@ -13,7 +13,7 @@ I hope people (especially _Nominators_), can find it useful!!
 - Frontend: Ember.js
 - CSS: PureCSS
 
-#How to dev
+# How to dev
 - Backend and Frontend are different apps.
 - You must have Node.js, NPM or Yarn, and ember-cli installed.
 - Database is in PostgreSQL, you can find table creation in _database/ddl.sql_.
