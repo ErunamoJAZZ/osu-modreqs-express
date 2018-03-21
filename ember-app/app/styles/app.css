@@ -42,13 +42,6 @@ a {
   height: 120px;
 }
 
-.spam {
-  font-style: italic;
-  position: absolute;
-  right: 1em;
-  top: 5em;
-}
-
 // Loader animation
 .loader{
   margin: 0 0 2em;
@@ -99,16 +92,34 @@ a.pink:visited {
 	background: #fff;
 	list-style: none;
 	padding: 0.5em;
-	max-width: 1200px;
+	max-width: 1000px;
 }
 
-.full-height{
-	height:100%;
+.osu-header{
+	font-size:18px;
+	box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	background-image: linear-gradient(rgba(67, 0, 42, .95),rgba(67, 0, 42, 1));
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	color: #fff;
+}
+
+.spam {
+  font-style: italic;
+	font-size:14px;
+}
+
+.refresh-button{
+	align-self: flex-end;
+}
+
+.nav-menu a.nav-title:hover{
+	background-color: rgba(185, 93, 0, 0.70);
 }
 
 .nav-menu{
-	flex: none;
-	font-size:18px;
+	font-size:15px;
 	box-shadow: 0 1px 3px rgba(0,0,0,.25);
 	background-image: linear-gradient(rgba(204,102,0,.9),rgba(204,102,0,1));
 }
@@ -130,8 +141,8 @@ a.pink:visited {
 }
 
 /* Top and Bottom borders come in */
-.topBotomBordersIn a:before,
-.topBotomBordersIn a:after
+.topBotomBordersIn a.pure-menu-link:before,
+.topBotomBordersIn a.pure-menu-link:after
 {
   position: absolute;
   left: 0px;
@@ -143,25 +154,32 @@ a.pink:visited {
   transition: all 0.3s;
 }
 
-.topBotomBordersIn a:before
+.topBotomBordersIn a.pure-menu-link:before
 {
   top: 0.5em;
   transform: translateY(-10px);
 }
 
-.topBotomBordersIn a:after
+.topBotomBordersIn a.pure-menu-link:after
 {
   bottom: 0.5em;
   transform: translateY(10px);
 }
 
-.topBotomBordersIn a:hover:before,
-.topBotomBordersIn a:hover:after
+.topBotomBordersIn a.pure-menu-link:hover:before,
+.topBotomBordersIn a.pure-menu-link:hover:after
 {
   opacity: 1;
   transform: translateY(0px);
 }
 
 .triangles{
+	background-image: url('https://osu.ppy.sh/images/layout/nav-backgrounds/triangles-1.png');
+}
+
+.triangles-fixed{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1050px;
 	background-image: url('https://osu.ppy.sh/images/layout/nav-backgrounds/triangles-1.png');
 }
