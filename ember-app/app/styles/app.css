@@ -16,14 +16,7 @@ h1 {
 
 a {
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.card h3 {
-  margin: 0 2rem 0.5rem 0;
+	color: inherit;
 }
 
 .box {
@@ -68,20 +61,15 @@ a:hover {
   vertical-align: top;
 }
 
-a.nostyle {
-  text-decoration: none;
-	color: inherit;
-}
-
-a.nostyle:hover h3 {
+a.pink:hover h3 {
 	color: #ff66aa;
 }
 
-a.nostyle h3 {
+a.pink h3 {
 	color: #d3578e;
 }
 
-a.nostyle:visited {
+a.pink:visited {
   text-decoration: none;
 	color: none;
 }
