@@ -70,6 +70,20 @@ a:hover {
 
 a.nostyle {
   text-decoration: none;
+	color: inherit;
+}
+
+a.nostyle:hover h3 {
+	color: #ff66aa;
+}
+
+a.nostyle h3 {
+	color: #d3578e;
+}
+
+a.nostyle:visited {
+  text-decoration: none;
+	color: none;
 }
 
 .osu-li{
@@ -84,8 +98,7 @@ a.nostyle {
 }
 
 .osu-page{
-	width: calc(100% - 80px);
-	max-width: 1000px;
+	width: calc(100% - 160px);
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 1em;
@@ -93,6 +106,7 @@ a.nostyle {
 	flex: none;
 	background: #fff;
 	list-style: none;
+	padding: 0.5em;
 }
 
 .full-height{
