@@ -12,7 +12,7 @@
 		</div>
 	</div>
 
-	<div class="osu-page container-box">
+	<div class="osu-page">
 		{{#if getBeatmaps.isRunning}}
 		  {{!-- Loader icon from: https://codepen.io/aurer/pen/jEGbA --}}
 		  <div class="loader loader--style1" title="0">
@@ -34,33 +34,33 @@
 		    </svg>
 		  </div>
 		{{else}}
-		<div class="container-column">
-		  {{!-- List of beatmaps --}}
-	    {{#each beatmaps as |item|}}
-					<a href={{item.url}} target="_blank" class="pink" >
-						<li class="osu-li">
-		          <h3>{{item.title}}</h3>
-		          <div class="box">
-		        		<img src={{item.thumb}} class="thumb">
-		            <div>
-		                <p>Artist: {{item.artist}}</p>
-		                <p>Creator: {{item.creator}} (posted by <span title="{{item.time}}">{{item.nick}}</span>)</p>
-		                <p>BPM: {{item.bpm}} , Favs: {{item.favourite_count}}</p>
-		            </div>
-		          </div>
-		          <p class="diff-icons">
-		            {{#each item.diffs as |diff|}}
-		                <img src="{{diff.urlImage}}" title="{{diff.version}} ({{diff.difficultyrating}})">
-		            {{/each}}
-		          </p>
-						</li>
-					</a>
-	    	{{else}}
-				<div class="pure-u-1-1">
-					<h2>WTF, why is it empty?</h2>
-				</div>
-    	{{/each}}
-		</div>
+	  {{!-- List of beatmaps --}}
+    {{#each beatmaps as |item|}}
+			<div class="card">
+				<a href={{item.url}} target="_blank" class="pink" >
+					<li class="osu-li">
+	          <h3>{{item.title}}</h3>
+	          <div class="box">
+	        		<img src={{item.thumb}} class="thumb">
+	            <div>
+	                <p>Artist: {{item.artist}}</p>
+	                <p>Creator: {{item.creator}} (posted by <span title="{{item.time}}">{{item.nick}}</span>)</p>
+	                <p>BPM: {{item.bpm}} , Favs: {{item.favourite_count}}</p>
+	            </div>
+	          </div>
+	          <p class="diff-icons">
+	            {{#each item.diffs as |diff|}}
+	                <img src="{{diff.urlImage}}" title="{{diff.version}} ({{diff.difficultyrating}})">
+	            {{/each}}
+	          </p>
+					</li>
+				</a>
+			</div>
+  	{{else}}
+			<div class="pure-u-1-1">
+				<h2>WTF, why is it empty?</h2>
+			</div>
+		{{/each}}
 		{{/if}}
   </div>
 </div>

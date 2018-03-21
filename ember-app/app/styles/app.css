@@ -87,15 +87,21 @@ a.pink:visited {
 }
 
 .osu-page{
-	width: calc(100% - 160px);
+	background: #fff;
+	list-style: none;
+	width: calc(100% - 80px);
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 1em;
 	margin-bottom: 1em;
-	background: #fff;
-	list-style: none;
 	padding: 0.5em;
 	max-width: 1000px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.card{
+	width: 50%;
 }
 
 .osu-header{
@@ -118,13 +124,13 @@ a.pink:visited {
 }
 
 .nav-menu a.nav-title:hover{
-	background-color: rgba(185, 93, 0, 0.70);
+	background-color: rgba(71, 80, 88, .7);
 }
 
 .nav-menu{
 	font-size:15px;
 	box-shadow: 0 1px 3px rgba(0,0,0,.25);
-	background-image: linear-gradient(rgba(204,102,0,.9),rgba(204,102,0,1));
+	background-image: linear-gradient(rgba(51, 59, 66, .97),rgba(51, 59, 66, 1));
 }
 
 .nav-menu a, .nav-menu span{
@@ -185,16 +191,4 @@ a.pink:visited {
 	margin-right: auto;
 	max-width: 1050px;
 	background-image: url('https://osu.ppy.sh/images/layout/nav-backgrounds/triangles-1.png');
-}
-
-.container-box{
-	flex: 1;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	overflow: hidden;
-	flex-wrap: wrap;
-}
-.container-column{
-	flex: 0.33;
 }
