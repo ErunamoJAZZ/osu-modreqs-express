@@ -69,6 +69,10 @@ a.pink h3 {
 	color: #d3578e;
 }
 
+a.pink:focus {
+	outline: none;
+}
+
 a.pink:visited {
   text-decoration: none;
 	color: none;
@@ -116,13 +120,13 @@ a.pink:visited {
 	padding:1em;
 }
 
-
 .nav-menu a:hover{
   background-color: inherit;;
 }
 
 .nav-menu a:focus{
 	background: none;
+	outline: none;
 }
 
 /* Top and Bottom borders come in */
