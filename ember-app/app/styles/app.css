@@ -22,14 +22,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.card {
-  margin: 0.5em;
-  padding: 0.5em;
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
-	background: #fff;
-	list-style: none;
-}
-
 .card h3 {
   margin: 0 2rem 0.5rem 0;
 }
@@ -87,6 +79,22 @@ a.nostyle {
   padding: 10px;
 }
 
-.card:hover{
+.osu-li:hover{
 	box-shadow: 0 1px 6px rgba(0,0,0,.70);
+}
+
+.osu-page{
+	width: calc(100% - 80px);
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	flex: none;
+	background: #fff;
+	list-style: none;
+}
+
+.full-height{
+	height:100%;
 }

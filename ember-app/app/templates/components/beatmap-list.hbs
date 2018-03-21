@@ -29,29 +29,27 @@
   </div>
 {{else}}
   {{!-- List of beatmaps --}}
-  <div class="pure-g">
+  <div class="pure-g osu-page">
     {{#each beatmaps as |item|}}
-      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
-				<div class="card">
-					<a class="nostyle" href={{item.url}} target="_blank">
-						<li class="osu-li">
-		          <h3>{{item.title}}</h3>
-		          <div class="box">
-		        		<img src={{item.thumb}} class="thumb">
-		            <div>
-		                <p>Artist: {{item.artist}}</p>
-		                <p>Creator: {{item.creator}} (posted by <span title="{{item.time}}">{{item.nick}}</span>)</p>
-		                <p>BPM: {{item.bpm}} , Favs: {{item.favourite_count}}</p>
-		            </div>
-		          </div>
-		          <p class="diff-icons">
-		            {{#each item.diffs as |diff|}}
-		                <img src="{{diff.urlImage}}" title="{{diff.version}} ({{diff.difficultyrating}})">
-		            {{/each}}
-		          </p>
-						</li>
-					</a>
-        </div>
+      <div class="wea pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+				<a class="nostyle" href={{item.url}} target="_blank">
+					<li class="osu-li">
+	          <h3>{{item.title}}</h3>
+	          <div class="box">
+	        		<img src={{item.thumb}} class="thumb">
+	            <div>
+	                <p>Artist: {{item.artist}}</p>
+	                <p>Creator: {{item.creator}} (posted by <span title="{{item.time}}">{{item.nick}}</span>)</p>
+	                <p>BPM: {{item.bpm}} , Favs: {{item.favourite_count}}</p>
+	            </div>
+	          </div>
+	          <p class="diff-icons">
+	            {{#each item.diffs as |diff|}}
+	                <img src="{{diff.urlImage}}" title="{{diff.version}} ({{diff.difficultyrating}})">
+	            {{/each}}
+	          </p>
+					</li>
+				</a>
       </div>
     {{else}}
       <div class="pure-u-1-1">
