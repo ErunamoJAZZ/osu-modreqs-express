@@ -1,13 +1,5 @@
 <!-- Menú -->
-<nav class="pure-menu pure-menu-horizontal">
-    <span href="/" class="pure-menu-heading">osu! #modreqs web</span>
-    {{#link-to "home" class="pure-menu-item pure-menu-link" activeClass="pure-menu-selected"}}
-      Beatmaps
-    {{/link-to}}
-    {{#link-to "about" class="pure-menu-item pure-menu-link" activeClass="pure-menu-selected"}}
-      About
-    {{/link-to}}
-</nav>
+{{nav-menu}}
 
 {{!-- real content is in outlet --}}
 {{outlet}}

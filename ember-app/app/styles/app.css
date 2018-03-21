@@ -101,3 +101,63 @@ a.pink:visited {
 .full-height{
 	height:100%;
 }
+
+.nav-menu{
+	flex: none;
+	font-size:18px;
+	box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	background-image: linear-gradient(rgba(204,102,0,.9),rgba(204,102,0,1));
+}
+
+.nav-menu a, .nav-menu span{
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+	padding:1em;
+}
+
+
+.nav-menu a:hover{
+  background-color: inherit;;
+}
+
+.nav-menu a:focus{
+	background: none;
+}
+
+/* Top and Bottom borders come in */
+.topBotomBordersIn a:before,
+.topBotomBordersIn a:after
+{
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: #FFF;
+  content: "";
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.topBotomBordersIn a:before
+{
+  top: 0.5em;
+  transform: translateY(-10px);
+}
+
+.topBotomBordersIn a:after
+{
+  bottom: 0.5em;
+  transform: translateY(10px);
+}
+
+.topBotomBordersIn a:hover:before,
+.topBotomBordersIn a:hover:after
+{
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.triangles{
+	background-image: url('https://osu.ppy.sh/images/layout/nav-backgrounds/triangles-1.png');
+}
