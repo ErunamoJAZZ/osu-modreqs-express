@@ -82,6 +82,10 @@ a.pink:visited {
 	box-shadow: 0 1px 6px rgba(0,0,0,.70);
 }
 
+.osu-li h3:hover{
+	text-decoration: underline;
+}
+
 .osu-page{
 	width: calc(100% - 160px);
 	margin-left: auto;
@@ -181,4 +185,16 @@ a.pink:visited {
 	margin-right: auto;
 	max-width: 1050px;
 	background-image: url('https://osu.ppy.sh/images/layout/nav-backgrounds/triangles-1.png');
+}
+
+.container-box{
+	flex: 1;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	overflow: hidden;
+	flex-wrap: wrap;
+}
+.container-column{
+	flex: 0.33;
 }
