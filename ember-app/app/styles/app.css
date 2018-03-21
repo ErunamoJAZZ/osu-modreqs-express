@@ -95,6 +95,7 @@ a.pink:visited {
 	background: #fff;
 	list-style: none;
 	padding: 0.5em;
+	max-width: 1200px;
 }
 
 .full-height{

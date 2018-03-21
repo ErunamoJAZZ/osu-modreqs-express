@@ -13,7 +13,7 @@
   "scripts": {
     "build": "ember build --environment=production --output-path=../public/",
     "lint:js": "eslint ./*.js app config lib server tests",
-    "start": "ember serve",
+    "start": "ember s --proxy=http://localhost:3000",
     "test": "ember test"
   },
   "devDependencies": {
