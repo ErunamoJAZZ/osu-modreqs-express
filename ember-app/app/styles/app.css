@@ -54,35 +54,17 @@ a {
   vertical-align: top;
 }
 
-a.pink:hover h3 {
-	color: #ff66aa;
-}
-
-a.pink h3 {
-	color: #d3578e;
-}
-
-a.pink:focus {
-	outline: none;
-}
-
-a.pink:visited {
-  text-decoration: none;
-	color: none;
-}
-
-.osu-li{
-  margin: 5px;
-  border:1px solid #fff;
+.osu-li__header{
   box-shadow: 0 1px 3px rgba(0,0,0,.25);
-  padding: 10px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #fff;
+	height: 120px;
+	border-radius: 4px 4px 0 0;
+
 }
 
-.osu-li:hover{
-	box-shadow: 0 1px 6px rgba(0,0,0,.70);
-}
-
-.osu-li h3:hover{
+.osu-li__header h3:hover{
 	text-decoration: underline;
 }
 
@@ -103,6 +85,12 @@ a.pink:visited {
 .card{
 	width: calc(50% - 10px);
 	margin: 5px;
+	padding-top: 0;
+	border-radius: 4px;
+}
+
+.card:hover{
+	box-shadow: 0 1px 6px rgba(0,0,0,.70);
 }
 
 @media (max-width: 850px) {
@@ -110,6 +98,15 @@ a.pink:visited {
 		width: calc(100% - 10px);
 		margin: 5px;
 	}
+}
+
+.image-overlay{
+	background-image: linear-gradient(rgba(0, 0, 0, .45),rgba(0, 0, 0, .65));
+	height: inherit;
+}
+
+.card__title{
+	padding: 10px;
 }
 
 .osu-header{
