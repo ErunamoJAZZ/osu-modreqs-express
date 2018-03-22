@@ -200,3 +200,28 @@ a.pink:visited {
 	max-width: 1050px;
 	background-image: url('https://osu.ppy.sh/images/layout/nav-backgrounds/triangles-1.png');
 }
+
+.truncate {
+	white-space: nowrap;
+	width: 460px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@media (max-width: 1150px) {
+	.truncate {
+		width: 460px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.truncate {
+		width: 367px;
+	}
+}
+
+@media (max-width: 850px) {
+	.truncate {
+		width: 680px;
+	}
+}
