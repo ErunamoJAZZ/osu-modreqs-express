@@ -26,9 +26,9 @@ I hope people (especially _Nominators_), can find it useful!!
   do this command: `git update-index --assume-unchanged auth.js`, to ignore any changes over this file.
 
 ## Run
-- Run `npm install` or `yarn install` on both root folder & _/ember-app_
+- Run `npm install` or `yarn install` on both root folder and _/ember-app_
 - To start Backend use `npm start` in the root folder.
-- To start ember use `ember start` in _/ember-app_ folder.
+- To start ember use `npm start` or `ember s --proxy=http://localhost:3000` in _/ember-app_ folder.
 - Go to http://localhost:4200/
 
 ## Production
