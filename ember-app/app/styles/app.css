@@ -31,12 +31,6 @@ a {
   margin-top: 1em;
 }
 
-.diff-icons {
-  text-align: center;
-  margin-bottom: 0;
-  margin-top: 0.5em;
-}
-
 .thumb {
   width: 166px;
   height: 120px;
@@ -66,6 +60,54 @@ a {
 
 .osu-li__header h3:hover{
 	text-decoration: underline;
+}
+
+.osu-li__content{
+	height: 50px;
+	padding: 0.5em;
+	position: relative;
+}
+
+.beatmapset_card__row{
+	display: flex;
+	position: relative;
+}
+
+.osu-li__mapper{
+	font-size: 70%;
+	font-weight: 600;
+	flex: 1;
+	min-width: 0;
+}
+
+.osu-li__mapper a{
+	color:#29b;
+}
+
+.osu-li__mapper a:hover{
+	text-decoration: underline;
+}
+
+.osu-li__nick{
+	font-size: 70%;
+	font-weight: 500;
+	flex: none;
+	min-width: 0;
+}
+
+.osu-li__diffs-icons {
+  margin-bottom: 0;
+  margin-top: 0.5em;
+	align-items: center;
+	font-size: 12px;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	display: flex;
+}
+
+.osu-li__difficulty-icon{
+	margin-right: 5px;
 }
 
 .osu-page{

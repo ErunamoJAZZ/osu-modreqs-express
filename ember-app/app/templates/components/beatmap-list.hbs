@@ -37,6 +37,7 @@
 	  {{!-- List of beatmaps --}}
     {{#each beatmaps as |item|}}
 			<div class="beatmapset_card">
+				{{!-- Parte superior --}}
 				<a href={{item.url}} target="_blank">
 					<li class="osu-li__header" style="background-image:url('https://assets.ppy.sh/beatmaps/{{item.beatmap_id}}/covers/card.jpg');">
 						<div class="image-overlay">
@@ -47,10 +48,25 @@
 						</div>
 					</li>
 				</a>
+				{{!-- Parte inferior --}}
 				<li class="osu-li__content">
-					<p class="diff-icons">
+					<div class="beatmapset_card__row">
+						<div class="osu-li__mapper">
+							<div class="u-ellipsis-overflow">
+								Mapped by <a href="https://osu.ppy.sh/users/{{item.creator}}" target="_blank">{{item.creator}}</a>
+							</div>
+						</div>
+						<div class="osu-li__nick">
+							<div class="u-ellipsis-overflow">
+								( Posted by <i>{{item.nick}}</i> )
+							</div>
+						</div>
+					</div>
+					<p class="osu-li__diffs-icons">
 						{{#each item.diffs as |diff|}}
+							<div class="osu-li__difficulty-icon">
 								<img src="{{diff.urlImage}}" title="{{diff.version}} ({{diff.difficultyrating}})">
+							</div>
 						{{/each}}
 					</p>
 				</li>
