@@ -31,12 +31,6 @@ a {
   margin-top: 1em;
 }
 
-.diff-icons {
-  text-align: center;
-  margin-bottom: 0;
-  margin-top: 0.5em;
-}
-
 .thumb {
   width: 166px;
   height: 120px;
@@ -54,36 +48,66 @@ a {
   vertical-align: top;
 }
 
-a.pink:hover h3 {
-	color: #ff66aa;
-}
-
-a.pink h3 {
-	color: #d3578e;
-}
-
-a.pink:focus {
-	outline: none;
-}
-
-a.pink:visited {
-  text-decoration: none;
-	color: none;
-}
-
-.osu-li{
-  margin: 5px;
-  border:1px solid #fff;
+.osu-li__header{
   box-shadow: 0 1px 3px rgba(0,0,0,.25);
-  padding: 10px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #fff;
+	height: 120px;
+	border-radius: 4px 4px 0 0;
+	font-style: italic
 }
 
-.osu-li:hover{
-	box-shadow: 0 1px 6px rgba(0,0,0,.70);
-}
-
-.osu-li h3:hover{
+.osu-li__header h3:hover{
 	text-decoration: underline;
+}
+
+.osu-li__content{
+	height: 50px;
+	padding: 0.5em;
+	position: relative;
+}
+
+.beatmapset_card__row{
+	display: flex;
+	position: relative;
+}
+
+.osu-li__mapper{
+	font-size: 70%;
+	font-weight: 600;
+	flex: 1;
+	min-width: 0;
+}
+
+.osu-li__mapper a{
+	color:#29b;
+}
+
+.osu-li__mapper a:hover{
+	text-decoration: underline;
+}
+
+.osu-li__nick{
+	font-size: 70%;
+	font-weight: 500;
+	flex: none;
+	min-width: 0;
+}
+
+.osu-li__diffs-icons {
+  margin-bottom: 0;
+  margin-top: 0.5em;
+	align-items: center;
+	font-size: 12px;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	display: flex;
+}
+
+.osu-li__difficulty-icon{
+	margin-right: 5px;
 }
 
 .osu-page{
@@ -92,24 +116,59 @@ a.pink:visited {
 	width: calc(100% - 80px);
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 1em;
-	margin-bottom: 1em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 	padding: 0.5em;
 	max-width: 1000px;
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.card{
+.beatmapset_card{
 	width: calc(50% - 10px);
 	margin: 5px;
+	padding-top: 0;
+	border-radius: 4px;
+	box-shadow: 0 1px 6px rgba(0,0,0,.25);
+}
+
+.beatmapset_card a{
+	outline: none;
+}
+
+.beatmapset_card:hover{
+	box-shadow: 0 1px 6px rgba(0,0,0,.70);
 }
 
 @media (max-width: 850px) {
-	.card{
+	.beatmapset_card{
 		width: calc(100% - 10px);
 		margin: 5px;
 	}
+}
+
+.image-overlay{
+	background-image: linear-gradient(rgba(0, 0, 0, .45),rgba(0, 0, 0, .65));
+	height: inherit;
+	border-radius: inherit;
+	position:relative;
+}
+
+.beatmapset_card__header{
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	width: calc(100% - 20px);
+	font-weight: 600;
+}
+
+.beatmapset_card__title{
+	font-size: 130%;
+	text-shadow: 0 2px 4px rgba(0,0,0,.75);
+}
+
+.beatmapset_card__artist{
+	text-shadow: 0 2px 4px rgba(0,0,0,.75);
 }
 
 .osu-header{
@@ -201,27 +260,8 @@ a.pink:visited {
 	background-image: url('https://osu.ppy.sh/images/layout/nav-backgrounds/triangles-1.png');
 }
 
-.truncate {
-	white-space: nowrap;
-	width: 460px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-@media (max-width: 1150px) {
-	.truncate {
-		width: 460px;
-	}
-}
-
-@media (max-width: 1000px) {
-	.truncate {
-		width: 367px;
-	}
-}
-
-@media (max-width: 850px) {
-	.truncate {
-		width: 680px;
-	}
+.u-ellipsis-overflow {
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
 }

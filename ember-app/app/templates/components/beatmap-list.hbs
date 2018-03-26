@@ -36,25 +36,40 @@
 		{{else}}
 	  {{!-- List of beatmaps --}}
     {{#each beatmaps as |item|}}
-			<div class="card">
-				<a href={{item.url}} target="_blank" class="pink" >
-					<li class="osu-li">
-	          <h3 class="truncate">{{item.title}}</h3>
-	          <div class="box">
-	        		<img src={{item.thumb}} class="thumb">
-	            <div>
-	                <p>Artist: {{item.artist}}</p>
-	                <p>Creator: {{item.creator}} (posted by <span title="{{item.time}}">{{item.nick}}</span>)</p>
-	                <p>BPM: {{item.bpm}} , Favs: {{item.favourite_count}}</p>
-	            </div>
-	          </div>
-	          <p class="diff-icons">
-	            {{#each item.diffs as |diff|}}
-	                <img src="{{diff.urlImage}}" title="{{diff.version}} ({{diff.difficultyrating}})">
-	            {{/each}}
-	          </p>
+			<div class="beatmapset_card">
+				{{!-- Parte superior --}}
+				<a href={{item.url}} target="_blank">
+					<li class="osu-li__header" style="background-image:url('https://assets.ppy.sh/beatmaps/{{item.beatmap_id}}/covers/card.jpg');">
+						<div class="image-overlay">
+							<div class="beatmapset_card__header">
+								<div class="beatmapset_card__title u-ellipsis-overflow">{{item.title}}</div>
+								<div class="beatmapset_card__artist u-ellipsis-overflow">{{item.artist}}</div>
+							</div>
+						</div>
 					</li>
 				</a>
+				{{!-- Parte inferior --}}
+				<li class="osu-li__content">
+					<div class="beatmapset_card__row">
+						<div class="osu-li__mapper">
+							<div class="u-ellipsis-overflow">
+								Mapped by <a href="https://osu.ppy.sh/users/{{item.creator}}" target="_blank">{{item.creator}}</a>
+							</div>
+						</div>
+						<div class="osu-li__nick">
+							<div class="u-ellipsis-overflow">
+								( Requested by <i>{{item.nick}}</i> )
+							</div>
+						</div>
+					</div>
+					<p class="osu-li__diffs-icons">
+						{{#each item.diffs as |diff|}}
+							<div class="osu-li__difficulty-icon">
+								<img src="{{diff.urlImage}}" title="{{diff.version}} ({{diff.difficultyrating}})">
+							</div>
+						{{/each}}
+					</p>
+				</li>
 			</div>
   	{{else}}
 			<div class="pure-u-1-1">
