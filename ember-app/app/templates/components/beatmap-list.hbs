@@ -36,12 +36,13 @@
 		{{else}}
 	  {{!-- List of beatmaps --}}
     {{#each beatmaps as |item|}}
-			<div class="card">
+			<div class="beatmapset_card">
 				<a href={{item.url}} target="_blank">
 					<li class="osu-li__header" style="background-image:url('https://assets.ppy.sh/beatmaps/{{item.beatmap_id}}/covers/card.jpg');">
 						<div class="image-overlay">
-							<div class="card__title">
-								<span class="truncate">{{item.title}} - {{item.artist}}</span>
+							<div class="beatmapset_card__header">
+								<div class="beatmapset_card__title u-ellipsis-overflow">{{item.title}}</div>
+								<div class="beatmapset_card__artist u-ellipsis-overflow">{{item.artist}}</div>
 							</div>
 						</div>
 					</li>

@@ -61,7 +61,7 @@ a {
 	color: #fff;
 	height: 120px;
 	border-radius: 4px 4px 0 0;
-
+	font-style: italic
 }
 
 .osu-li__header h3:hover{
@@ -82,7 +82,7 @@ a {
 	flex-wrap: wrap;
 }
 
-.card{
+.beatmapset_card{
 	width: calc(50% - 10px);
 	margin: 5px;
 	padding-top: 0;
@@ -90,12 +90,16 @@ a {
 	box-shadow: 0 1px 6px rgba(0,0,0,.25);
 }
 
-.card:hover{
+.beatmapset_card a{
+	outline: none;
+}
+
+.beatmapset_card:hover{
 	box-shadow: 0 1px 6px rgba(0,0,0,.70);
 }
 
 @media (max-width: 850px) {
-	.card{
+	.beatmapset_card{
 		width: calc(100% - 10px);
 		margin: 5px;
 	}
@@ -105,10 +109,24 @@ a {
 	background-image: linear-gradient(rgba(0, 0, 0, .45),rgba(0, 0, 0, .65));
 	height: inherit;
 	border-radius: inherit;
+	position:relative;
 }
 
-.card__title{
-	padding: 10px;
+.beatmapset_card__header{
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	width: calc(100% - 20px);
+	font-weight: 600;
+}
+
+.beatmapset_card__title{
+	font-size: 130%;
+	text-shadow: 0 2px 4px rgba(0,0,0,.75);
+}
+
+.beatmapset_card__artist{
+	text-shadow: 0 2px 4px rgba(0,0,0,.75);
 }
 
 .osu-header{
@@ -200,27 +218,8 @@ a {
 	background-image: url('https://osu.ppy.sh/images/layout/nav-backgrounds/triangles-1.png');
 }
 
-.truncate {
-	white-space: nowrap;
-	width: 460px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-@media (max-width: 1150px) {
-	.truncate {
-		width: 460px;
-	}
-}
-
-@media (max-width: 1000px) {
-	.truncate {
-		width: 367px;
-	}
-}
-
-@media (max-width: 850px) {
-	.truncate {
-		width: 680px;
-	}
+.u-ellipsis-overflow {
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
 }
