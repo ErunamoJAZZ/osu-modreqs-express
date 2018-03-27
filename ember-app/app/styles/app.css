@@ -1,9 +1,9 @@
 body {
   background-image: url("https://osu.ppy.sh/images/backgrounds/page-ddd.png");
-	font-family: Exo 2,Arial Grande,Tahoma,Helvetica,Arial,Microsoft YaHei,SimHei,Arial Unicode MS,sans-serif;
-	font-size: 16px;
-	line-height: 1.25;
-	color: #555;
+  font-family: Exo 2,Arial Grande,Tahoma,Helvetica,Arial,Microsoft YaHei,SimHei,Arial Unicode MS,sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #555;
 }
 
 section {
@@ -16,7 +16,7 @@ h1 {
 
 a {
   text-decoration: none;
-	color: inherit;
+  color: inherit;
 }
 
 .box {
@@ -50,161 +50,157 @@ a {
 
 .osu-li__header{
   box-shadow: 0 1px 3px rgba(0,0,0,.25);
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: #fff;
-	height: 120px;
-	border-radius: 4px 4px 0 0;
-	font-style: italic
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  height: 120px;
+  border-radius: 4px 4px 0 0;
+  font-style: italic
 }
 
 .osu-li__header h3:hover{
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .osu-li__content{
-	height: 50px;
-	padding: 0.5em;
-	position: relative;
+  padding: 0.5em;
+  position: relative;
 }
 
 .beatmapset_card__row{
-	display: flex;
-	position: relative;
+  display: flex;
+  position: relative;
 }
 
 .osu-li__mapper{
-	font-size: 70%;
-	font-weight: 600;
-	flex: 1;
-	min-width: 0;
+  font-size: 70%;
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
 }
 
 .osu-li__mapper a{
-	color:#29b;
+  color:#29b;
 }
 
 .osu-li__mapper a:hover{
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .osu-li__nick{
-	font-size: 70%;
-	font-weight: 500;
-	flex: none;
-	min-width: 0;
+  font-size: 70%;
+  font-weight: 500;
+  flex: none;
+  min-width: 0;
 }
 
 .osu-li__diffs-icons {
-  margin-bottom: 0;
-  margin-top: 0.5em;
-	align-items: center;
-	font-size: 12px;
-	position: absolute;
-	bottom: 10px;
-	left: 10px;
-	display: flex;
+  padding-top: 0.5em;
+  align-items: center;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .osu-li__difficulty-icon{
-	margin-right: 5px;
+  margin-right: 5px;
 }
 
 .osu-page{
-	background: #fff;
-	list-style: none;
-	width: calc(100% - 80px);
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-	padding: 0.5em;
-	max-width: 1000px;
-	display: flex;
-	flex-wrap: wrap;
+  background: #fff;
+  list-style: none;
+  width: calc(100% - 80px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .beatmapset_card{
-	width: calc(50% - 10px);
-	margin: 5px;
-	padding-top: 0;
-	border-radius: 4px;
-	box-shadow: 0 1px 6px rgba(0,0,0,.25);
+  width: calc(50% - 10px);
+  margin: 5px;
+  padding-top: 0;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.25);
 }
 
 .beatmapset_card a{
-	outline: none;
+  outline: none;
 }
 
 .beatmapset_card:hover{
-	box-shadow: 0 1px 6px rgba(0,0,0,.70);
+  box-shadow: 0 1px 6px rgba(0,0,0,.70);
 }
 
 @media (max-width: 850px) {
-	.beatmapset_card{
-		width: calc(100% - 10px);
-		margin: 5px;
-	}
+  .beatmapset_card{
+    width: calc(100% - 10px);
+    margin: 5px;
+  }
 }
 
 .image-overlay{
-	background-image: linear-gradient(rgba(0, 0, 0, .45),rgba(0, 0, 0, .65));
-	height: inherit;
-	border-radius: inherit;
-	position:relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.2));
+  height: inherit;
+  border-radius: inherit;
+  position:relative;
 }
 
 .beatmapset_card__header{
-	position: absolute;
-	left: 10px;
-	bottom: 10px;
-	width: calc(100% - 20px);
-	font-weight: 600;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: calc(100% - 20px);
+  font-weight: 600;
 }
 
 .beatmapset_card__title{
-	font-size: 130%;
-	text-shadow: 0 2px 4px rgba(0,0,0,.75);
+  font-size: 130%;
+  text-shadow: 0 2px 4px rgba(0,0,0,.75);
 }
 
 .beatmapset_card__artist{
-	text-shadow: 0 2px 4px rgba(0,0,0,.75);
+  text-shadow: 0 2px 4px rgba(0,0,0,.75);
 }
 
 .osu-header{
-	font-size:18px;
-	box-shadow: 0 3px 6px rgba(0,0,0,.25);
-	background-image: linear-gradient(rgba(67, 0, 42, .95),rgba(67, 0, 42, 1));
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	color: #fff;
+  font-size:18px;
+  box-shadow: 0 3px 6px rgba(0,0,0,.25);
+  background-image: linear-gradient(rgba(67, 0, 42, .95),rgba(67, 0, 42, 1));
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
 }
 
 .spam {
   font-style: italic;
-	font-size:14px;
+  font-size:14px;
 }
 
 .refresh-button{
-	align-self: flex-end;
+  align-self: flex-end;
 }
 
 .nav-menu a.nav-title:hover{
-	background-color: rgba(71, 80, 88, .7);
+  background-color: rgba(71, 80, 88, .7);
 }
 
 .nav-menu{
-	font-size:15px;
-	box-shadow: 0 1px 3px rgba(0,0,0,.25);
-	background-image: linear-gradient(rgba(51, 59, 66, .97),rgba(51, 59, 66, 1));
+  font-size:15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+  background-image: linear-gradient(rgba(51, 59, 66, .97),rgba(51, 59, 66, 1));
 }
 
 .nav-menu a, .nav-menu span{
   color: #fff;
   text-decoration: none;
   padding: 10px;
-	padding:1em;
+  padding:1em;
 }
 
 .nav-menu a:hover{
@@ -212,8 +208,8 @@ a {
 }
 
 .nav-menu a:focus{
-	background: none;
-	outline: none;
+  background: none;
+  outline: none;
 }
 
 /* Top and Bottom borders come in */
@@ -250,18 +246,24 @@ a {
 }
 
 .triangles{
-	background-image: url('https://osu.ppy.sh/images/layout/nav-backgrounds/triangles-1.png');
+  background-image: url('https://osu.ppy.sh/images/layout/nav-backgrounds/triangles-1.png');
 }
 
 .triangles-fixed{
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1050px;
-	background-image: url('https://osu.ppy.sh/images/layout/nav-backgrounds/triangles-1.png');
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1050px;
+  background-image: url('https://osu.ppy.sh/images/layout/nav-backgrounds/triangles-1.png');
 }
 
 .u-ellipsis-overflow {
   white-space: nowrap !important;
   text-overflow: ellipsis !important;
   overflow: hidden !important;
+}
+
+@media only screen and (max-width: 500px) {
+    .osu-li__nick {
+        display: none;
+    }
 }
