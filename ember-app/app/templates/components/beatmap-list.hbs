@@ -61,13 +61,13 @@
                 </div>
               </div>
             </div>
-            <p class="osu-li__diffs-icons">
+            <div class="osu-li__diffs-icons">
               {{#each item.diffs as |diff|}}
-                <div class="osu-li__difficulty-icon">
+                <div class="osu-li__difficulty-icon ">
                   <img src="{{diff.urlImage}}" title="{{diff.version}} ({{diff.difficultyrating}})">
                 </div>
               {{/each}}
-            </p>
+            </div>
           </li>
         </div>
         {{else}}
