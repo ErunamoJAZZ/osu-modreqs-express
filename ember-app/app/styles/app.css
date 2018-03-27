@@ -104,10 +104,7 @@ a {
   bottom: 10px;
   left: 10px;
   display: flex;
-<<<<<<< HEAD
-=======
   flex-wrap: wrap;
->>>>>>> upstream/master
 }
 
 .osu-li__difficulty-icon{
@@ -152,11 +149,7 @@ a {
 }
 
 .image-overlay{
-<<<<<<< HEAD
-  background-image: linear-gradient(rgba(0, 0, 0, .45),rgba(0, 0, 0, .65));
-=======
   background-image: linear-gradient(rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.2));
->>>>>>> upstream/master
   height: inherit;
   border-radius: inherit;
   position:relative;
