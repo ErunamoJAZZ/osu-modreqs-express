@@ -261,3 +261,9 @@ a {
   text-overflow: ellipsis !important;
   overflow: hidden !important;
 }
+
+@media only screen and (max-width: 500px) {
+    .osu-li__nick {
+        display: none;
+    }
+}
