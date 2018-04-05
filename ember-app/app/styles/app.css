@@ -267,3 +267,7 @@ a {
         display: none;
     }
 }
+
+.filter-radiobox input {
+  margin-left: 1ex;
+}
