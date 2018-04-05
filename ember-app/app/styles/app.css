@@ -63,7 +63,6 @@ a {
 }
 
 .osu-li__content{
-  height: 55px;
   padding: 0.5em;
   position: relative;
 }
@@ -96,13 +95,9 @@ a {
 }
 
 .osu-li__diffs-icons {
-  margin-bottom: 0;
-  margin-top: 0.5em;
+  padding-top: 0.5em;
   align-items: center;
-  font-size: 12px;
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
 }
@@ -265,4 +260,10 @@ a {
   white-space: nowrap !important;
   text-overflow: ellipsis !important;
   overflow: hidden !important;
+}
+
+@media only screen and (max-width: 500px) {
+    .osu-li__nick {
+        display: none;
+    }
 }
