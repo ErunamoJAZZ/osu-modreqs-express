@@ -11,6 +11,29 @@
       </button>
     </div>
   </div>
+
+  {{!-- Filter --}}
+  <aside class="osu-page" {{action 'reloadBeatmaps' on="change"}}>
+    <strong>Order by: </strong>
+    <
+    {{input type="radio" name="orderBeatmapsBy" value='none'
+      change=(action (mut orderBeatmapsBy) 'none')}}
+    <label for="radio0">None</label>
+
+    {{input type="radio" name="orderBeatmapsBy" value='bpm'
+      change=(action (mut orderBeatmapsBy) 'bpm')}}
+    <label for="radio0">BPM</label>
+
+    {{input type="radio" name="orderBeatmapsBy" value='favs'
+      change=(action (mut orderBeatmapsBy) 'favs')}}
+    <label for="radio0">Favs</label>
+
+    {{input type="radio" name="orderBeatmapsBy" value='numDiffs'
+      change=(action (mut orderBeatmapsBy) 'numDiffs')}}
+    <label for="radio0">Num diffs</label>
+  </aside>
+
+  {{!-- Beatmaps  --}}
   <div class="osu-page">
     {{#if getBeatmaps.isRunning}}
     {{!-- Loader icon from: https://codepen.io/aurer/pen/jEGbA --}}
@@ -34,10 +57,10 @@
       </div>
     {{else}}
       {{!-- List of beatmaps --}}
-      {{#each beatmaps as |item|}}
+      {{#each beatmapsFltered as |item|}}
         <div class="beatmapset_card">
           {{!-- Parte superior --}}
-          <a href={{item.url}} target="_blank">
+          <a href={{item.url}} target="_blank" title={{item.idx}}>
             <li class="osu-li__header" style="background-image:url('https://assets.ppy.sh/beatmaps/{{item.beatmap_id}}/covers/card.jpg');">
               <div class="image-overlay">
                 <div class="beatmapset_card__header">
@@ -52,7 +75,9 @@
             <div class="beatmapset_card__row">
               <div class="osu-li__mapper">
                 <div class="u-ellipsis-overflow">
-                  Mapped by <a href="https://osu.ppy.sh/users/{{item.creator}}" target="_blank">{{item.creator}}</a>
+                  Mapped by <a href="https://osu.ppy.sh/users/{{item.creator}}" target="_blank">{{item.creator}}</a>,
+                  BPM: {{item.bpm}},
+                  Favs: {{item.favourite_count}}
                 </div>
               </div>
               <div class="osu-li__nick">
