@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://osu.ppy.sh/images/backgrounds/page-ddd.png");
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Osu-triangles.svg/1024px-Osu-triangles.svg.png");
   font-family: Exo 2,Arial Grande,Tahoma,Helvetica,Arial,Microsoft YaHei,SimHei,Arial Unicode MS,sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -36,7 +36,7 @@ a {
   height: 120px;
 }
 
-// Loader animation
+/* Loader animation */
 .loader{
   margin: 0 0 2em;
   height: 100px;
@@ -109,7 +109,7 @@ a {
 .osu-page{
   background: #fff;
   list-style: none;
-  width: calc(100% - 80px);
+  width: calc(100% - 1em);
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.5em;
@@ -125,7 +125,8 @@ a {
   margin: 5px;
   padding-top: 0;
   border-radius: 4px;
-  box-shadow: 0 1px 6px rgba(0,0,0,.25);
+  box-shadow: 0 1px 6px rgba(50,50,50,.25);
+  transition: box-shadow 200ms ease-in-out;
 }
 
 .beatmapset_card a{
@@ -133,7 +134,7 @@ a {
 }
 
 .beatmapset_card:hover{
-  box-shadow: 0 1px 6px rgba(0,0,0,.70);
+  box-shadow: 0 1px 12px rgba(50, 50, 50, 0.5);
 }
 
 @media (max-width: 850px) {
@@ -175,6 +176,7 @@ a {
   flex-direction: column;
   text-align: center;
   color: #fff;
+  border-radius: 0 0 8px 8px;
 }
 
 .spam {
@@ -252,7 +254,6 @@ a {
 .triangles-fixed{
   margin-left: auto;
   margin-right: auto;
-  max-width: 1050px;
   background-image: url('https://osu.ppy.sh/images/layout/nav-backgrounds/triangles-1.png');
 }
 
