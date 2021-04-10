@@ -9,7 +9,9 @@ const keys = {
   db: {
     host: 'localhost',
     port: 5432,
-    ssl: true,
+    ssl: {
+      rejectUnauthorized: false,
+    },
     database: 'modreqsdb',
     user: 'xxxx',
     password: 'xxxx',
