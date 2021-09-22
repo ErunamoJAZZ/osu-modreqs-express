@@ -17,7 +17,8 @@ const channel = '#modreqs';
 const privmsg = `PRIVMSG ${channel} :`;
 
 // Regex for `/np` ingame
-const osuPattern = /\b((https?:\/\/)(osu\.ppy\.sh)(\/[bs]{1}\/)([\d.-]*))/g;
+const osuPattern = /\b((https?:\/\/)(osu\.ppy\.sh)(\/beatmapsets\/)([\d.-]*))/g;
+// 2021-06-22 I noticed they changed this lol   /\b((https?:\/\/)(osu\.ppy\.sh)(\/[bs]{1}\/)([\d.-]*))/g;
 
 // flag to know if ping is working (if not, to restart socket)
 let globalChoFlagPing = 0;
