@@ -84,7 +84,7 @@ const choListener = () => {
             const id = splited[4];
             console.log(`[MOD PLZ]>> ${text} - (${userNick}, ${idType}, ${id})'`);
             // HEREEEEE!!! :3
-            modRequetPlz(userNick, idType, id);
+            modRequetPlz(userNick, /*idType*/ 's', id);
           });
         }
       }
