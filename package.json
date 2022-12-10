@@ -13,7 +13,7 @@
     "compression": "^1.7.4",
     "cookie-parser": "~1.4.5",
     "debug": "~4.3.1",
-    "express": "~4.17.1",
+    "express": "~4.17.3",
     "funfix-core": "^7.0.1",
     "funfix-exec": "^7.0.1",
     "memory-cache": "^0.2.0",
